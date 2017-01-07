@@ -13,7 +13,7 @@ query.replace("_","+")
 url = "http://www.google.com/search?q="+query
 a = requests.get(url)
 b = a.content
-f = open("poppi.html","w")
+f = open(".poppi.html","w")
 f.write(b)
 f.close()
 soup = BeautifulSoup(b)
