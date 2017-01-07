@@ -1,22 +1,13 @@
-cd ~/PowerMusic/Songs_Lyrics/
-name=""
-for var in "$@"
-do
-if [ "$var" == "song" ]; then
- continue
-fi
-if [ "$var" == "play" ]; then
- continue
-fi
-name="$name$var"
-name="$name+"
-done
-
-python lyrics.py $name
-if [ "$1" == "play" ]; then
-   echo "Playing Song"
-   python download.py $name play  
- else
-    python download.py $name
- fi
-fi
+mkdir ~/PowerMusic/Songs_Lyrics
+cp lyrics.py ~/PowerMusic/Songs_Lyrics/lyrics.py
+cp download.py ~/PowerMusic/Songs_Lyrics/download.py
+sudo apt-get install python-bs4
+sudo apt-get install python-requests
+sudo apt-get install python-pip
+sudo pip install youtube-dl
+sudo pip install -U youtube-dl
+sudo apt-get install mplayer
+sudo apt-get install libav-tools
+sudo cp lyrics /bin/
+sudo chmod 755 /bin/powermusic
+cd .. && cd .mplayer && rm config && cd .. && cd PowerMusic && cp config ~/.mplayer
